@@ -1,0 +1,11 @@
+.page {
+  background-color: #fcf5e5;
+  background-position: center;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
