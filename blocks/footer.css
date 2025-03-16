@@ -3,11 +3,19 @@
   height: 136px;
   margin: 32px auto 0;
   border-top: solid 1px;
-  width: 88%;
+  width: 90%;
 }
 
 .copyright {
+  font-family: "Poppins", Arial;
+  font-weight: 500;
   opacity: 70%;
   margin: 60px auto;
   text-align: center;
+}
+
+@media screen and (max-width: 630px) {
+  .footer {
+    margin: 22px auto 0;
+  }
 }

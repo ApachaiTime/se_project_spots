@@ -1,0 +1,83 @@
+.card {
+  padding: 0;
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Poppins", Arial;
+}
+
+.card__image {
+  width: 100%;
+  overflow: hidden;
+  max-height: 470px;
+  max-width: 470px;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card__list {
+  padding: 0;
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  gap: 20px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  list-style-type: none;
+}
+
+.card__description {
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card__content {
+  max-width: 470px;
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__like-button {
+  flex-shrink: 0;
+  height: 20px;
+  width: 24px;
+  opacity: 70%;
+  background-image: url(../images/heart-icon.svg);
+  background-color: transparent;
+  border-style: none;
+  display: flex;
+  align-self: center;
+  cursor: pointer;
+}
+
+.card__like-button:hover {
+  opacity: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .card__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .card__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .card__image {
+    object-fit: cover;
+    height: 288px;
+  }
+
+  .card {
+    height: 100%;
+  }
+}
