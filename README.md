@@ -1,21 +1,11 @@
-# Project 3: Spots
+Responsive Flex UI is a modern web layout project that utilizes CSS Flexbox, CSS Grid, and responsive design principles to create a fully adaptable and interactive user interface. This project demonstrates how to structure a webpage using flexible containers, organize content dynamically, and ensure a seamless experience across various screen sizes.
 
-### Overview  
+Features
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+• Flexbox & Grid Layouts – A hybrid approach combining the power of Flexbox and CSS Grid for efficient content alignment and distribution.
+
+• Responsive Design – Fully optimized for desktops, tablets, and mobile devices using media queries.
+
+• Interactive Input Elements – Styled form inputs, buttons, and other UI components to enhance user interaction.
+
+• Consistent Spacing & Alignment – Utilizing flexible containers and grid-bsased positioning to maintain balance across different resolutions.
