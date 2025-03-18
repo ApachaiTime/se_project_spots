@@ -73,8 +73,8 @@
 
 @media screen and (max-width: 630px) {
   .card__image {
-    object-fit: cover;
     height: 288px;
+    max-width: none;
   }
 
   .card {

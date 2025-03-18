@@ -94,6 +94,9 @@
     max-height: 104px;
     margin: 0 auto;
   }
+  .profile__column {
+    margin: auto;
+  }
 
   .profile__name {
     margin: 6px auto;
