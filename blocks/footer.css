@@ -1,16 +1,17 @@
 .footer {
-  background-color: #fcf5e5;
-  height: 136px;
-  margin: 32px auto 0;
+  margin: auto;
   border-top: solid 1px;
+  border-color: rgba(0, 0, 0, 40%);
   width: 90%;
 }
 
-.copyright {
+.footer__copyright {
+  color: #212121b2;
   font-family: "Poppins", Arial;
   font-weight: 400;
   opacity: 70%;
-  margin: 60px auto;
+  margin: 0 auto;
+  padding: 60px 0;
   text-align: center;
 }
 

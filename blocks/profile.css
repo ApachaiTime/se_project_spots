@@ -1,12 +1,12 @@
 .profile {
-  font-family: "Poppins", Arial;
+  font-family: "Poppins", Arial, sans-serif;
   display: flex;
   margin: 20px auto;
   padding-bottom: 20px;
   justify-content: center;
   width: 90%;
-  max-height: 100%;
   border-bottom: solid 1px;
+  border-color: rgba(0, 0, 0, 40%);
 }
 
 .profile__column {
@@ -19,11 +19,13 @@
 .profile__avatar {
   border-radius: 8px;
   max-width: 190px;
-  max-height: 248px;
+  max-height: 190px;
   object-fit: cover;
 }
 
 .profile__name {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
   margin: 0 0 12px;
   display: -webkit-box;
   overflow: hidden;
@@ -41,6 +43,10 @@
   -webkit-box-orient: vertical;
   margin: 0;
   max-width: 420px;
+  font-size: 16px;
+  line-height: 100%;
+  opacity: 70%;
+  font-weight: 500;
 }
 
 .profile__edit-button {
@@ -48,13 +54,18 @@
   justify-content: space-between;
   gap: 8px;
   white-space: nowrap;
-  max-width: 84px;
+  max-width: 107px;
   max-height: 16px;
   border: none;
   background: none;
   opacity: 70%;
   padding: 0;
   margin-top: auto;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  cursor: pointer;
 }
 
 .profile__edit-button:hover {
@@ -62,16 +73,19 @@
 }
 
 .profile__post-button {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  line-height: 100%;
   display: flex;
   align-items: center;
   margin-left: auto;
   background-color: #212121;
   max-width: 149px;
   max-height: 52px;
-  color: #fff;
+  color: #fcf5e5;
   border-radius: 8px;
   border: none;
-  margin-top: 159px;
+  margin-top: auto;
   padding: 18px 32px;
   gap: 8px;
   font-size: 16px;
@@ -80,18 +94,17 @@
 }
 
 .profile__post-button:hover {
-  opacity: 70%;
+  opacity: 80%;
 }
 
 @media screen and (max-width: 630px) {
   .profile {
-    display: flex;
     flex-direction: column;
   }
 
   .profile__avatar {
     max-width: 80px;
-    max-height: 104px;
+    max-height: 80px;
     margin: 0 auto;
   }
   .profile__column {

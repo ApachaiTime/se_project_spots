@@ -3,11 +3,12 @@
   justify-content: center;
   background-color: #fff;
   width: 100%;
-  max-height: 46px;
-  padding: 10px 0;
+  min-height: 46px;
 }
 
 .header__logo {
   max-width: 76px;
-  max-height: 26px;
+  height: 26px;
+  display: flex;
+  align-self: center;
 }
