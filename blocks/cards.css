@@ -25,11 +25,7 @@
 }
 
 @media screen and (max-width: 630px) {
-  .cards__list {
-    padding: 0;
-  }
-
   .cards {
-    margin: 22 auto 0;
+    margin: 22px auto 0;
   }
 }

@@ -9,3 +9,7 @@ Features
 • Interactive Input Elements – Styled form inputs, buttons, and other UI components to enhance user interaction.
 
 • Consistent Spacing & Alignment – Utilizing flexible containers and grid-bsased positioning to maintain balance across different resolutions.
+
+See my project with this link https://apachaitime.github.io/se_project_spots/
+
+Video for my project! https://drive.google.com/file/d/1Mdal9HXMu6GGVYOQm_TQE_iFmfxVqxts/view?usp=sharing
