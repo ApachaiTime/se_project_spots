@@ -4,6 +4,8 @@
   flex-direction: column;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
+  width: 413px;
+  margin: auto;
 }
 
 .card__image {
@@ -50,7 +52,11 @@
   opacity: 100%;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 288px;
+  }
+
   .card__image {
     height: 288px;
     width: 288px;
