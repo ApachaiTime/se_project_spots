@@ -7,7 +7,6 @@
 
 .cards__list {
   display: grid;
-  /* width: fit-content; */
   margin: 0 auto;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
@@ -15,20 +14,11 @@
   padding: 0;
 }
 
-@media screen and (max-width: 1500px) {
-}
-
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1430px) {
   .cards__list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* @media screen and (max-width: 880px) {
-  .cards__list {
-    grid-template-columns: 1fr;
-  }
-} */
 
 @media screen and (max-width: 1000px) {
   .cards {
