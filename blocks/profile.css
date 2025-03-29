@@ -4,7 +4,6 @@
   margin: 20px auto;
   padding-bottom: 20px;
   justify-content: center;
-  width: 90%;
   border-bottom: solid 1px;
   border-color: rgba(33, 33, 33, 0.4);
 }
@@ -102,7 +101,7 @@
   opacity: 80%;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 750px) {
   .profile {
     flex-direction: column;
   }

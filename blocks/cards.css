@@ -5,27 +5,36 @@
 .cards__list {
   padding: 0;
   display: grid;
-  width: 90%;
+  width: fit-content;
   margin: 0 auto;
   gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, 413px);
   list-style-type: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
+  .cards__list {
+  }
+}
+
+@media screen and (max-width: 1320px) {
   .cards__list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 880px) {
+/* @media screen and (max-width: 880px) {
   .cards__list {
     grid-template-columns: 1fr;
   }
-}
+} */
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 750px) {
   .cards {
     margin: 22px auto 0;
+
+    .cards__list {
+      grid-template-columns: 1fr;
+    }
   }
 }
