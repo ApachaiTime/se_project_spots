@@ -2,7 +2,7 @@
   margin: auto;
   border-bottom: solid 1px;
   border-color: rgba(33, 33, 33, 0.4);
-  padding-bottom: 32px;
+  padding-bottom: 20px;
 }
 
 .cards__list {
@@ -14,18 +14,23 @@
   padding: 0;
 }
 
-@media screen and (max-width: 1430px) {
+@media screen and (max-width: 1300px) {
+  .cards {
+    max-width: 1000px;
+  }
+
   .cards__list {
+    max-width: fit-content;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 650px) {
   .cards {
     margin: 22px auto 0;
-
-    .cards__list {
-      grid-template-columns: 1fr;
-    }
+    max-width: 288px;
+  }
+  .cards__list {
+    grid-template-columns: 1fr;
   }
 }

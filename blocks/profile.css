@@ -101,9 +101,16 @@
   opacity: 80%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1300px) {
+  .profile {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 650px) {
   .profile {
     flex-direction: column;
+    max-width: 288px;
   }
 
   .profile__avatar {
