@@ -119,6 +119,66 @@
       <footer class="footer">
         <p class="footer__copyright">2023 © Spots</p>
       </footer>
+      <div class="modal modal_is-open">
+        <div class="modal__content">
+          <button class="modal__close-button" type="button">
+            <img src="./images/X-icon.svg" alt="X icon" />
+          </button>
+          <h2 class="modal__title">Edit Profile</h2>
+
+          <form class="modal__form">
+            <label for="profile-name-input"
+              >Name
+              <input
+                id="profile-name-input"
+                class="modal__input"
+                type="text"
+                placeholder="Type your name"
+              />
+            </label>
+            <label for="profile-description-input"
+              >Description
+              <input
+                id="profile-description-input"
+                class="modal__input"
+                type="text"
+                placeholder="Describe yourself"
+              />
+            </label>
+            <button class="modal__submit-button" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal modal_is-open">
+        <div class="modal__content">
+          <button class="modal__close-button" type="button">
+            <img src="./images/X-icon.svg" alt="X icon" />
+          </button>
+          <h2 class="modal__title">New Post</h2>
+
+          <form class="modal__form">
+            <label for="post-image-input"
+              >Image link
+              <input
+                id="post-image-input"
+                class="modal__input"
+                type="text"
+                placeholder="Paste a link to the picture"
+              />
+            </label>
+            <label for="post-caption-input"
+              >Caption
+              <input
+                id="post-caption-input"
+                class="modal__input"
+                type="text"
+                placeholder="Type your caption"
+              />
+            </label>
+            <button class="modal__submit-button" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

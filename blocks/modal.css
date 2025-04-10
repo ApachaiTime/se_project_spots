@@ -1,0 +1,125 @@
+.modal {
+  visibility: hidden;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(33, 33, 33, 0.4);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/* .modal_is-open {
+  visibility: visible;
+} */
+
+.modal__content {
+  background-color: #fff;
+  max-width: 730px;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  padding: 36px 50px;
+}
+
+.modal__close-button {
+  opacity: 40%;
+  background: none;
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  border-style: none;
+}
+
+.modal__close-button:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
+
+.modal__title {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 100%;
+}
+
+.modal__form {
+  color: rgba(33, 33, 33, 0.7);
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 110%;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__input {
+  box-sizing: border-box;
+  border-color: rgba(33, 33, 33, 0.4);
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 16px 12px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+  display: block;
+}
+
+.modal__input:hover {
+  cursor: pointer;
+  border-color: rgba(33, 33, 33, 1);
+}
+
+.modal__input::placeholder {
+  color: rgba(33, 33, 33, 0.3);
+}
+
+.modal__submit-button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  background: rgba(33, 33, 33, 1);
+  color: rgba(252, 245, 229, 1);
+  max-width: 156px;
+  height: 52px;
+  border-radius: 8px;
+}
+
+.modal__submit-button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .modal__content {
+    padding: 12px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__form {
+    gap: 24px;
+  }
+
+  .modal__input {
+    font-size: 16px;
+  }
+
+  .modal__close-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__submit-button {
+    max-width: none;
+    width: 100%;
+  }
+}
