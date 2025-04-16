@@ -12,9 +12,9 @@
   bottom: 0;
 }
 
-/* .modal_is-open {
+.modal_is-opened {
   visibility: visible;
-} */
+}
 
 .modal__content {
   background-color: #fff;
