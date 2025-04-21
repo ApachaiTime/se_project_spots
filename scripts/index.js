@@ -1,22 +1,51 @@
+const profileForm = document.querySelector("#profile-modal");
 const editButton = document.querySelector(".profile__edit-button");
-const editModal = document.querySelector("#edit-profile-modal");
-const editModalCloseButton = editModal.querySelector(".modal__close-button");
-const postModal = document.querySelector("#new-post-modal");
-const postModalCloseButton = postModal.querySelector(".modal__close-button");
+const profileModalCloseButton = profileForm.querySelector(
+  ".modal__close-button"
+);
+
+const postForm = document.querySelector("#post-modal");
+const imageInput = postForm.querySelector("#post-image-input");
+const captionInput = postForm.querySelector("#post-caption-input");
+const submitButton = postForm.querySelector(".modal__submit-button");
+const postFormCloseButton = postForm.querySelector(".modal__close-button");
 const newPostButton = document.querySelector(".profile__post-button");
+const nameInput = profileForm.querySelector("#profile-name-input");
+const profileName = document.querySelector(".profile__name");
+const jobInput = profileForm.querySelector("#profile-description-input");
+const job = document.querySelector(".profile__description");
 
 editButton.addEventListener("click", function () {
-  editModal.classList.add("modal_is-opened");
+  profileForm.classList.add("modal_is-opened");
+  nameInput.value = profileName.textContent;
+  jobInput.value = job.textContent;
 });
 
-editModalCloseButton.addEventListener("click", function () {
-  editModal.classList.remove("modal_is-opened");
+profileModalCloseButton.addEventListener("click", function () {
+  profileForm.classList.remove("modal_is-opened");
 });
 
 newPostButton.addEventListener("click", function () {
-  postModal.classList.add("modal_is-opened");
+  postForm.classList.add("modal_is-opened");
 });
 
-postModalCloseButton.addEventListener("click", function () {
-  postModal.classList.remove("modal_is-opened");
+postFormCloseButton.addEventListener("click", function () {
+  postForm.classList.remove("modal_is-opened");
 });
+
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  job.textContent = jobInput.value;
+  profileForm.classList.remove("modal_is-opened");
+}
+profileForm.addEventListener("submit", handleProfileFormSubmit);
+
+function handlePostFormSubmit(evt) {
+  evt.preventDefault();
+  console.log(imageInput.value, captionInput.value);
+  postForm.classList.remove("modal_is-opened");
+  imageInput.value = "";
+  captionInput.value = "";
+}
+postForm.addEventListener("submit", handlePostFormSubmit);
