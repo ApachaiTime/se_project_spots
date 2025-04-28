@@ -1,3 +1,29 @@
+const initialCards = [
+  {
+    name: "Val of Thorens",
+    link: "./images/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
+    name: "Restaurant terrace",
+    link: "./images/2-photo-by-ceiline-from-pexels.jpg",
+  },
+  {
+    name: "An outdoor cafe",
+    link: "./images/3-photo-by-tubanur-dogan-from-pexels.jpg",
+  },
+  {
+    name: "A very long bridge, over the forest",
+    link: "./images/4-photo-by-maurice-laschet-from-pexels.jpg",
+  },
+  {
+    name: "Tunnel with morning light",
+    link: "./images/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+  },
+  {
+    name: "Mountain house",
+    link: "./images/6-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+];
 const profileForm = document.querySelector("#profile-modal");
 const editButton = document.querySelector(".profile__edit-button");
 const profileModalCloseButton = profileForm.querySelector(
@@ -49,3 +75,5 @@ function handlePostFormSubmit(evt) {
   captionInput.value = "";
 }
 postForm.addEventListener("submit", handlePostFormSubmit);
+
+initialCards.forEach(console.log(initialCards));
