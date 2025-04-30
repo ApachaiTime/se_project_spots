@@ -41,36 +41,46 @@ const profileName = document.querySelector(".profile__name");
 const jobInput = profileForm.querySelector("#profile-description-input");
 const job = document.querySelector(".profile__description");
 
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
 editButton.addEventListener("click", function () {
-  profileForm.classList.add("modal_is-opened");
+  openModal(profileForm);
+
   nameInput.value = profileName.textContent;
   jobInput.value = job.textContent;
 });
 
 profileModalCloseButton.addEventListener("click", function () {
-  profileForm.classList.remove("modal_is-opened");
+  closeModal(profileForm);
 });
 
 newPostButton.addEventListener("click", function () {
-  postForm.classList.add("modal_is-opened");
+  openModal(postForm);
 });
 
 postFormCloseButton.addEventListener("click", function () {
-  postForm.classList.remove("modal_is-opened");
+  closeModal(postForm);
 });
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   job.textContent = jobInput.value;
-  profileForm.classList.remove("modal_is-opened");
+  closeModal(profileForm);
 }
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 function handlePostFormSubmit(evt) {
   evt.preventDefault();
   console.log(imageInput.value, captionInput.value);
-  postForm.classList.remove("modal_is-opened");
+  closeModal(postForm);
+
   imageInput.value = "";
   captionInput.value = "";
 }
