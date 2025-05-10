@@ -45,74 +45,16 @@
         </section>
         <section class="cards">
           <ul class="cards__list">
-            <li class="card">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Val Thorens</h2>
-                <button class="card__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Restaurant terrace"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Restaurant terrace</h2>
-                <button class="card__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="An outdoor cafe"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__description">An outdoor cafe</h2>
-                <button class="card__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="A very long bridge, over the forest"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__description">
-                  A very long bridge, over the forest
-                </h2>
-                <button class="card__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Tunnel with morning light"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Tunnel with morning light</h2>
-                <button class="card__like-button" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Mountain house"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Mountain house</h2>
-                <button class="card__like-button" type="button"></button>
-              </div>
-            </li>
+            <template id="card-template">
+              <li class="card">
+                <button class="card__delete-button" type="button"></button>
+                <img class="card__image" />
+                <div class="card__content">
+                  <h2 class="card__description"></h2>
+                  <button class="card__like-button" type="button"></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -125,7 +67,6 @@
             <img src="./images/X-icon.svg" alt="X icon" />
           </button>
           <h2 class="modal__title">Edit Profile</h2>
-
           <form class="modal__form">
             <label for="profile-name-input"
               >Name
@@ -155,7 +96,6 @@
             <img src="./images/X-icon.svg" alt="X icon" />
           </button>
           <h2 class="modal__title">New Post</h2>
-
           <form class="modal__form">
             <label for="post-image-input"
               >Image link
@@ -178,6 +118,17 @@
             <button class="modal__submit-button" type="submit">Save</button>
           </form>
         </div>
+      </div>
+      <div id="image-modal" class="modal">
+        <ul class="modal__list">
+          <li class="modal__list-item">
+            <button class="modal__image_close-button" type="button">
+              <img src="./images/x-icon-white.svg" alt="X icon" />
+            </button>
+            <img class="modal__image" />
+            <h2 class="modal__caption"></h2>
+          </li>
+        </ul>
       </div>
     </div>
     <script src="./scripts/index.js"></script>
