@@ -50,9 +50,7 @@ const job = document.querySelector(".profile__description");
 const imageModal = document.querySelector("#image-modal");
 const modalCaption = imageModal.querySelector(".modal__caption");
 const modalImage = imageModal.querySelector(".modal__image");
-const imageModalClosebtn = imageModal.querySelector(
-  ".modal__image_close-button"
-);
+const imageModalClosebtn = imageModal.querySelector(".modal__image_close");
 
 function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -127,6 +125,8 @@ function handlePostFormSubmit(evt) {
     name: captionInput.value,
     link: imageInput.value,
   };
+  captionInput.value = "";
+  imageInput.value = "";
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
 }

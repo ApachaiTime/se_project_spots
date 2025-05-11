@@ -132,7 +132,7 @@
   box-sizing: border-box;
 }
 
-.modal__image_close-button {
+.modal__image_close {
   position: relative;
   top: 30px;
   right: -40px;
@@ -144,12 +144,12 @@
   justify-self: flex-end;
 }
 
-.modal__image_close-button:hover {
+.modal__image_close:hover {
   opacity: 40%;
 }
 
 @media screen and (max-width: 650px) {
-  .modal__image_close-button {
+  .modal__image_close {
     top: -5px;
     right: 0;
   }
