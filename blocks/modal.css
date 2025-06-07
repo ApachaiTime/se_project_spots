@@ -80,6 +80,29 @@
   display: block;
 }
 
+.modal__input-error {
+  border-width: 1px;
+  border-style: solid;
+  color: rgba(33, 33, 33, 1);
+  box-sizing: border-box;
+  border-color: #ff000099;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 16px 12px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+  display: block;
+}
+
+.modal__error {
+  margin-top: 8px;
+  display: block;
+  color: #ff0000b2;
+}
+
 .modal__input:hover {
   cursor: pointer;
   border-color: rgba(33, 33, 33, 1);
@@ -101,10 +124,23 @@
   border-radius: 8px;
 }
 
-.modal__submit-button:hover {
+.modal__submit-button-disabled {
+  border-style: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  background: rgba(33, 33, 33, 1);
+  color: rgba(252, 245, 229, 1);
+  max-width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  opacity: 50%;
+}
+
+/* .modal__submit-button:hover {
   cursor: pointer;
   opacity: 80%;
-}
+} */
 
 .modal__list {
   padding: 0;

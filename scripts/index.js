@@ -36,12 +36,14 @@ const profileModalCloseButton = profileForm.querySelector(
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
+
 const cardsList = document.querySelector(".cards__list");
-const postForm = document.querySelector("#post-modal");
-const imageInput = postForm.querySelector("#post-image-input");
-const captionInput = postForm.querySelector("#post-caption-input");
-const submitButton = postForm.querySelector(".modal__submit-button");
-const postFormCloseButton = postForm.querySelector(".modal__close-button");
+const postModal = document.querySelector("#post-modal");
+const modalForm = document.querySelector(".modal__form");
+const imageInput = postModal.querySelector("#post-image-input");
+const captionInput = postModal.querySelector("#post-caption-input");
+const submitButton = modalForm.querySelector(".modal__submit-button");
+const postFormCloseButton = postModal.querySelector(".modal__close-button");
 const newPostButton = document.querySelector(".profile__post-button");
 const nameInput = profileForm.querySelector("#profile-name-input");
 const profileName = document.querySelector(".profile__name");
@@ -99,14 +101,15 @@ editButton.addEventListener("click", function () {
 
 profileModalCloseButton.addEventListener("click", function () {
   closeModal(profileForm);
+  disableButton(submitButton);
 });
 
 newPostButton.addEventListener("click", function () {
-  openModal(postForm);
+  openModal(postModal);
 });
 
 postFormCloseButton.addEventListener("click", function () {
-  closeModal(postForm);
+  closeModal(postModal);
 });
 
 function handleProfileFormSubmit(evt) {
@@ -120,17 +123,18 @@ profileForm.addEventListener("submit", handleProfileFormSubmit);
 function handlePostFormSubmit(evt) {
   evt.preventDefault();
   console.log(imageInput.value, captionInput.value);
-  closeModal(postForm);
+  closeModal(postModal);
   inputValues = {
     name: captionInput.value,
     link: imageInput.value,
   };
   captionInput.value = "";
   imageInput.value = "";
+  disableButton(submitButton);
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
 }
-postForm.addEventListener("submit", handlePostFormSubmit);
+postModal.addEventListener("submit", handlePostFormSubmit);
 {
 }
 

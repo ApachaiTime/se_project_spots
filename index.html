@@ -67,26 +67,35 @@
             <img src="./images/X-icon.svg" alt="X icon" />
           </button>
           <h2 class="modal__title">Edit Profile</h2>
-          <form class="modal__form">
+          <form class="modal__form" novalidate>
             <label for="profile-name-input"
               >Name
               <input
+                minlength="2"
+                maxlength="40"
                 required
                 id="profile-name-input"
                 class="modal__input"
                 type="text"
                 placeholder="Type your name"
               />
+              <span id="profile-name-input-error" class="modal__error"></span>
             </label>
             <label for="profile-description-input"
               >Description
               <input
+                minlength="2"
+                maxlength="200"
                 required
                 id="profile-description-input"
                 class="modal__input"
                 type="text"
                 placeholder="Describe yourself"
               />
+              <span
+                id="profile-description-input-error"
+                class="modal__error"
+              ></span>
             </label>
             <button class="modal__submit-button" type="submit">Save</button>
           </form>
@@ -98,7 +107,7 @@
             <img src="./images/X-icon.svg" alt="X icon" />
           </button>
           <h2 class="modal__title">New Post</h2>
-          <form class="modal__form">
+          <form class="modal__form" novalidate>
             <label for="post-image-input"
               >Image link
               <input
@@ -108,16 +117,20 @@
                 type="url"
                 placeholder="Paste a link to the picture"
               />
+              <span id="post-image-input-error" class="modal__error"></span>
             </label>
             <label for="post-caption-input"
               >Caption
               <input
+                minlength="2"
+                maxlength="30"
                 required
                 id="post-caption-input"
                 class="modal__input"
                 type="text"
                 placeholder="Type your caption"
               />
+              <span id="post-caption-input-error" class="modal__error"></span>
             </label>
             <button class="modal__submit-button" type="submit">Save</button>
           </form>
@@ -126,7 +139,6 @@
       <div id="image-modal" class="modal">
         <ul class="modal__list">
           <li class="modal__list-item">
-           <li class="modal__list-item"></li>
             <button class="modal__image_close" type="button">
               <img src="./images/x-icon-white.svg" alt="X icon" />
             </button>
@@ -137,5 +149,6 @@
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>
