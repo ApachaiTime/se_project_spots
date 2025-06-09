@@ -82,6 +82,11 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", function (evt) {
+    if (evt.key === `Escape`) {
+      closeModal(modal);
+    }
+  });
 }
 
 function closeModal(modal) {
@@ -141,4 +146,13 @@ postModal.addEventListener("submit", handlePostFormSubmit);
 initialCards.forEach(function (item) {
   cardElement = getCardElement(item);
   cardsList.append(cardElement);
+});
+
+const modal = document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", function (evt) {
+    if (evt.target === modal) {
+      console.log(evt.target);
+      closeModal(modal);
+    }
+  });
 });

@@ -80,23 +80,6 @@
   display: block;
 }
 
-.modal__input-error {
-  border-width: 1px;
-  border-style: solid;
-  color: rgba(33, 33, 33, 1);
-  box-sizing: border-box;
-  border-color: #ff000099;
-  font-family: "Poppins", Arial, sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 100%;
-  padding: 16px 12px;
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 8px;
-  display: block;
-}
-
 .modal__error {
   margin-top: 8px;
   display: block;
@@ -110,6 +93,10 @@
 
 .modal__input::placeholder {
   color: rgba(33, 33, 33, 0.3);
+}
+
+.modal__input-error {
+  border-color: #ff000099;
 }
 
 .modal__submit-button {
@@ -136,11 +123,6 @@
   border-radius: 8px;
   opacity: 50%;
 }
-
-/* .modal__submit-button:hover {
-  cursor: pointer;
-  opacity: 80%;
-} */
 
 .modal__list {
   padding: 0;
