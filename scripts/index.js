@@ -38,11 +38,13 @@ const cardTemplate = document
   .content.querySelector(".card");
 
 const cardsList = document.querySelector(".cards__list");
+const modalInput = document.querySelectorAll(".modal__input");
 const postModal = document.querySelector("#post-modal");
 const modalForm = document.querySelector(".modal__form");
 const imageInput = postModal.querySelector("#post-image-input");
 const captionInput = postModal.querySelector("#post-caption-input");
-const submitButton = modalForm.querySelector(".modal__submit-button");
+const postSubmitButton = postModal.querySelector(".modal__submit-button");
+const profileSubmitButton = modalForm.querySelector(".modal__submit-button");
 const postFormCloseButton = postModal.querySelector(".modal__close-button");
 const newPostButton = document.querySelector(".profile__post-button");
 const nameInput = profileForm.querySelector("#profile-name-input");
@@ -106,7 +108,6 @@ editButton.addEventListener("click", function () {
 
 profileModalCloseButton.addEventListener("click", function () {
   closeModal(profileForm);
-  disableButton(submitButton);
 });
 
 newPostButton.addEventListener("click", function () {
@@ -121,23 +122,22 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   job.textContent = jobInput.value;
+  disableButton(profileSubmitButton);
   closeModal(profileForm);
 }
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 function handlePostFormSubmit(evt) {
   evt.preventDefault();
-  console.log(imageInput.value, captionInput.value);
-  closeModal(postModal);
   inputValues = {
     name: captionInput.value,
     link: imageInput.value,
   };
-  captionInput.value = "";
-  imageInput.value = "";
-  disableButton(submitButton);
+  evt.target.reset();
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+  disableButton(postSubmitButton);
+  closeModal(postModal);
 }
 postModal.addEventListener("submit", handlePostFormSubmit);
 {
