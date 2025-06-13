@@ -111,7 +111,7 @@
   border-radius: 8px;
 }
 
-.modal__submit-button-disabled {
+.modal__submit-button_disabled {
   border-style: none;
   font-weight: 500;
   font-size: 16px;

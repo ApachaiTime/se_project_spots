@@ -1,36 +1,6 @@
-const initialCards = [
-  {
-    name: "Golden Gate bridge",
-    link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
-  },
-  {
-    name: "Val of Thorens",
-    link: "./images/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "./images/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "./images/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest",
-    link: "./images/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "./images/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "./images/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-];
-const profileForm = document.querySelector("#profile-modal");
+const profileModal = document.querySelector("#profile-modal");
 const editButton = document.querySelector(".profile__edit-button");
-const profileModalCloseButton = profileForm.querySelector(
+const profileModalCloseButton = profileModal.querySelector(
   ".modal__close-button"
 );
 const cardTemplate = document
@@ -38,7 +8,6 @@ const cardTemplate = document
   .content.querySelector(".card");
 
 const cardsList = document.querySelector(".cards__list");
-const modalInput = document.querySelectorAll(".modal__input");
 const postModal = document.querySelector("#post-modal");
 const modalForm = document.querySelector(".modal__form");
 const imageInput = postModal.querySelector("#post-image-input");
@@ -47,9 +16,9 @@ const postSubmitButton = postModal.querySelector(".modal__submit-button");
 const profileSubmitButton = modalForm.querySelector(".modal__submit-button");
 const postFormCloseButton = postModal.querySelector(".modal__close-button");
 const newPostButton = document.querySelector(".profile__post-button");
-const nameInput = profileForm.querySelector("#profile-name-input");
+const nameInput = profileModal.querySelector("#profile-name-input");
 const profileName = document.querySelector(".profile__name");
-const jobInput = profileForm.querySelector("#profile-description-input");
+const jobInput = profileModal.querySelector("#profile-description-input");
 const job = document.querySelector(".profile__description");
 const imageModal = document.querySelector("#image-modal");
 const modalCaption = imageModal.querySelector(".modal__caption");
@@ -82,50 +51,60 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_is-opened");
+    {
+      if (openModal) {
+        closeModal(openModal);
+      }
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  document.addEventListener("keydown", function (evt) {
-    if (evt.key === `Escape`) {
-      closeModal(modal);
-    }
-  });
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscape);
 }
 
-imageModalClosebtn.addEventListener("click", () => {
-  closeModal(imageModal);
-});
-
 editButton.addEventListener("click", function () {
-  openModal(profileForm);
-
+  openModal(profileModal);
   nameInput.value = profileName.textContent;
   jobInput.value = job.textContent;
+  hideInputError(profileModal, jobInput, settings);
+  hideInputError(profileModal, nameInput, settings);
 });
 
-profileModalCloseButton.addEventListener("click", function () {
-  closeModal(profileForm);
-});
+function closebtnhandle() {
+  const closeButtons = document.querySelectorAll(
+    ".modal__close-button, .modal__image_close"
+  );
+  closeButtons.forEach((button) => {
+    console.log("process btn", button);
+    const modal = button.closest(".modal");
+    button.addEventListener("click", () => closeModal(modal));
+  });
+}
+
+closebtnhandle();
 
 newPostButton.addEventListener("click", function () {
   openModal(postModal);
 });
 
-postFormCloseButton.addEventListener("click", function () {
-  closeModal(postModal);
-});
-
-function handleProfileFormSubmit(evt) {
+function handleprofileModalSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   job.textContent = jobInput.value;
   disableButton(profileSubmitButton);
-  closeModal(profileForm);
+  closeModal(profileModal);
 }
-profileForm.addEventListener("submit", handleProfileFormSubmit);
+profileModal.addEventListener("submit", handleprofileModalSubmit);
 
 function handlePostFormSubmit(evt) {
   evt.preventDefault();
@@ -134,7 +113,7 @@ function handlePostFormSubmit(evt) {
     link: imageInput.value,
   };
   evt.target.reset();
-  const cardElement = getCardElement(inputValues);
+  cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   disableButton(postSubmitButton);
   closeModal(postModal);
